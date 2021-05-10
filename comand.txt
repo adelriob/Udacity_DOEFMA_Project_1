@@ -1,0 +1,24 @@
+***********
+export ARM_CLIENT_ID=2c9142a3-ec83-4184-a8ce-922e151343a9
+export ARM_CLIENT_SECRET=GmkF3kH6wBY1Gf_1ZetIyQ2cKbtZ_~03h~
+***********
+export ARM_CLIENT_ID=52f1de6b-7269-4ff8-82e3-992b18c86bd5
+export ARM_CLIENT_SECRET=1x0M9.8gFGBCeBTe-Bs~svBH-XCjqK5FNj
+export ARM_SUBSCRIPTION_ID=e602deb0-5931-4735-b543-8659027d624b
+export ARM_TENANT_ID=25e4482b-96bf-441b-aff4-b1ca0446cdd4
+
+52f1de6b-7269-4ff8-82e3-992b18c86bd5
+1x0M9.8gFGBCeBTe-Bs~svBH-XCjqK5FNj
+f9ef6965-e36b-411c-b510-fa1d68bef7e5
+
+az login --use-device-code
+
+https://microsoft.com/devicelogin
+
+az policy definition create --name tagging-policy --mode indexed --rules policy-tags.json
+
+az policy assignment create --policy tagging-policy --name tagging-policy
+
+az ad sp create-for-rbac -n "Packer" --role contributor --scopes /subscriptions/e602deb0-5931-4735-b543-8659027d624b
+
+packer build server.json
